@@ -1,4 +1,61 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ENG0018 Conference Project</title>
+
+    <style>
+        body {
+            font-family: Calibri, Arial, sans-serif;
+            margin: 40px;
+            max-width: 900px;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #003366;
+        }
+
+        .box {
+            border: 2px solid #003366;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            background: #f9f9f9;
+        }
+
+        .toc {
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #003366;
+            margin-bottom: 30px;
+        }
+
+        .figure img {
+            width: 70%;
+            border-radius: 8px;
+        }
+
+        .timestamp {
+            font-size: 0.9em;
+            color: gray;
+        }
+    </style>
+
+    <!-- Word Count Script -->
+    <script>
+        function countWords() {
+            let text = document.getElementById("article-text").innerText;
+            let words = text.trim().split(/\s+/).length;
+            document.getElementById("wordcount").innerText = words;
+        }
+        window.onload = countWords;
+    </script>
+
+</head>
+<body>
+  
 <html>
   <head>
      <img src="WebBanner2023.png" alt="Banner" width="1200" height="300">
