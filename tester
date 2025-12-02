@@ -1,0 +1,64 @@
+<h1>How Self-Driving Cars Sense, Think, and Navigate the World</h1>
+
+<h2>Abstract</h2>
+<p>Self-driving cars combine artificial intelligence, sensor technology and advanced engineering to navigate without human control. These vehicles use systems such as LiDAR, radar, cameras and machine learning algorithms to detect obstacles, identify road markings and make driving decisions. This article explains how autonomous vehicles perceive their environment, process sensor data and plan safe routes. It discusses engineering challenges including sensor fusion, unpredictable human behaviour, adverse weather and ethical considerations. It also explores future developments such as vehicle-to-vehicle communication and improved AI models.</p>
+
+<h2>Introduction</h2>
+<p>Self-driving cars, also known as autonomous vehicles (AVs), are rapidly changing the automotive industry. Companies such as Tesla, Waymo and Mercedes are already deploying cars with various levels of autonomy. A fully self-driving car aims to perform all driving tasks without human intervention—steering, braking and reacting to hazards. To achieve this, the vehicle must sense the environment, understand what it sees and make safe decisions.</p>
+
+<h2>How Self-Driving Cars “See” the World</h2>
+<ul>
+  <li><strong>Cameras:</strong> detect traffic lights, signs and lanes.</li>
+  <li><strong>LiDAR:</strong> uses lasers to create a 3D map of surroundings.</li>
+  <li><strong>Radar:</strong> measures speed and distance of objects.</li>
+  <li><strong>Ultrasonic sensors:</strong> useful at close range for parking.</li>
+</ul>
+
+<h3>Figure 1: Sensor Coverage</h3>
+<p>(Insert image showing camera, LiDAR, radar and ultrasonic placement.)</p>
+
+<h2>Sensor Fusion</h2>
+<p>No sensor is perfect. Sensor fusion combines data from cameras, LiDAR, radar and ultrasonics to produce a single accurate model of the environment. This improves reliability and reduces noise.</p>
+
+<h2>How Self-Driving Cars Make Decisions</h2>
+<ol>
+  <li><strong>Perception:</strong> recognises vehicles, people, road signs and lanes.</li>
+  <li><strong>Prediction:</strong> anticipates what other road users will do.</li>
+  <li><strong>Planning and Control:</strong> calculates a safe path, then steers, accelerates and brakes accordingly.</li>
+</ol>
+
+<h3>Table 1: Sensor Comparison</h3>
+<table>
+  <tr><th>Sensor</th><th>Strengths</th><th>Weaknesses</th></tr>
+  <tr><td>Camera</td><td>High detail, cheap</td><td>Poor in bad weather</td></tr>
+  <tr><td>LiDAR</td><td>Accurate 3D mapping</td><td>Expensive</td></tr>
+  <tr><td>Radar</td><td>Works in fog/rain</td><td>Low resolution</td></tr>
+  <tr><td>Ultrasonic</td><td>Great close range</td><td>Only for low speeds</td></tr>
+</table>
+
+<h2>Engineering Challenges</h2>
+<ul>
+  <li><strong>Weather:</strong> rain, fog and snow interfere with sensors.</li>
+  <li><strong>Human behaviour:</strong> pedestrians and drivers are unpredictable.</li>
+  <li><strong>Computing power:</strong> AVs process terabytes of data.</li>
+  <li><strong>Ethics:</strong> legal responsibility is still unclear.</li>
+</ul>
+
+<h2>Future Directions</h2>
+<ul>
+  <li>Vehicle-to-Vehicle (V2V) communication</li>
+  <li>Advanced AI models</li>
+  <li>Cheaper, more durable sensors</li>
+  <li>Integration with smart cities</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>Self-driving cars rely on a combination of engineering and artificial intelligence to navigate safely. By using multiple sensors, sensor fusion, perception algorithms and planning systems, autonomous vehicles can detect dangers and make safe decisions. Although challenges remain, rapid progress in AI and automotive engineering is bringing fully driverless cars closer to reality.</p>
+
+<h2>References</h2>
+<ul>
+  <li>Buehler, M., Iagnemma, K. and Singh, S. (2020) <i>The DARPA Urban Challenge</i>. Springer.</li>
+  <li>Favarò, F. et al. (2021) ‘Autonomous vehicle accident analysis’, <i>Accident Analysis & Prevention</i>, 159.</li>
+  <li>Levinson, J. et al. (2011) ‘Towards fully autonomous driving’, <i>IEEE Intelligent Vehicles Symposium</i>.</li>
+  <li>Waymo (2023) <i>Safety Report</i>. Available at: https://waymo.com</li>
+</ul>
