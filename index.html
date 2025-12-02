@@ -55,14 +55,81 @@
 
 </head>
 <body>
-  
-<html>
-  <head>
-     <img src="WebBanner2023.png" alt="Banner" width="1200" height="300">
-       <h1><b>ENG0018 Computer Laboratory 2025/26</b></h1>
-       <h2>Student URN: 6915011</h2>
-     <hr>
-     <h2 style=”font-family:calibri:”><b>Conference Project: How Self-Driving Cars Sense, Think, and Navigate the World</b></h2>
-     </hr>
-  </head>
+
+    <!-- ======== YOUR BANNER ======== -->
+    <img src="WebBanner2023.png" alt="Banner" width="1200" height="300">
+
+    <!-- ======== YOUR HEADER DETAILS ======== -->
+    <h1><b>ENG0018 Computer Laboratory 2025/26</b></h1>
+    <h2><b>Student URN: 6915011</b></h2>
+    <hr>
+
+    <h2 style="font-family: Calibri;"><b>Conference Project: How Self-Driving Cars Sense, Think, and Navigate the World</b></h2>
+    <hr>
+
+    <!-- Timestamp + Word Count -->
+    <p><strong>Word count:</strong> <span id="wordcount">0</span></p>
+    <p class="timestamp"><strong>Last updated:</strong> <span id="timestamp"></span></p>
+
+    <script>
+        document.getElementById("timestamp").innerHTML = new Date().toLocaleString();
+    </script>
+
+    <!-- ===================== TABLE OF CONTENTS ===================== -->
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="#abstract">Abstract</a></li>
+            <li><a href="#article">Main Article</a></li>
+            <li><a href="#figures">Figures & Tables</a></li>
+            <li><a href="#presentation">Digital Presentation</a></li>
+            <li><a href="#references">References</a></li>
+        </ul>
+    </div>
+
+    <!-- ===================== ABSTRACT ===================== -->
+    <h2 id="abstract">Abstract</h2>
+    <div class="box">
+        <p> <i>Insert your 150-word abstract here.</i></p>
+    </div>
+
+    <!-- ===================== MAIN ARTICLE ===================== -->
+    <h2 id="article">Main Article</h2>
+    <div class="box" id="article-text">
+        <p> <i>Paste your full 800–1000 word article here.</i></p>
+        <p>Example in-text citation: <a href="#ref1">(Smith, 2022)</a></p>
+    </div>
+
+    <!-- ===================== FIGURES ===================== -->
+    <h2 id="figures">Figures & Tables</h2>
+    <div class="box">
+        <p> <i>Add figures, images, charts, or tables here.</i></p>
+
+        <div class="figure">
+            <img src="yourimage.jpg" alt="Example Figure">
+            <p><strong>Figure 1:</strong> Description of your figure.</p>
+        </div>
+    </div>
+
+    <!-- ===================== PRESENTATION ===================== -->
+    <h2 id="presentation">Digital Presentation</h2>
+    <div class="box">
+        <p> <i>Insert your PowerPoint/MP4/PDF presentation embed here.</i></p>
+
+        <!-- Example iframe — replace with your file -->
+        <iframe src="yourfile.pdf" width="100%" height="500px"></iframe>
+    </div>
+
+    <!-- ===================== REFERENCES ===================== -->
+    <h2 id="references">Reference List</h2>
+    <div class="box">
+        <p id="ref1">
+            Smith, J. (2022). <i>Example Article Title</i>. Example Journal.<br>
+            <a href="#">Access Article</a>
+        </p>
+
+        <p> <i>Add at least four Harvard-formatted references here.</i></p>
+    </div>
+
+</body>
 </html>
