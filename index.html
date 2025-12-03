@@ -14,33 +14,33 @@
         }
 
         h1, h2, h3 {
-            color: #BFD8E5; /* headings use the same colour */
+            color: #BFD8E5; /* headings use theme colour */
         }
 
         .box {
             background-color: #1e1e1e;
-            border: 1px solid #BFD8E5; /* box border matches theme */
+            border: 1px solid #BFD8E5;
             padding: 15px;
             border-radius: 6px;
             margin-bottom: 30px;
         }
 
-        /* article sections (your insert areas) use WHITE text */
-        #article-text, 
-        #abstract-text, 
-        #figures-text, 
-        #presentation-text, 
+        /* WHITE text inside content boxes */
+        #abstract-text,
+        #article-text,
+        #figures-text,
+        #presentation-text,
         #references-text {
             color: #ffffff;
         }
 
-        /* links remain blue */
+        /* links = blue */
         a {
             color: #66aaff;
             text-decoration: underline;
         }
 
-        hr { 
+        hr {
             border: 1px solid #BFD8E5;
         }
 
@@ -49,7 +49,7 @@
             height: auto;
         }
 
-        /* Word count bottom right */
+        /* Word count bottom-right */
         #wordcount-footer {
             text-align: right;
             color: #BFD8E5;
@@ -58,7 +58,7 @@
         }
     </style>
 
-    <!-- Word Count Script -->
+    <!-- Word Count -->
     <script>
         function countWords() {
             let text = document.getElementById("article-text").innerText;
@@ -71,7 +71,7 @@
 </head>
 <body>
 
-    <!-- ===== BANNER ===== -->
+    <!-- ===== HEADER / BANNER ===== -->
     <img src="WebBanner2023.png" alt="Banner">
 
     <h1><b>ENG0018 Computer Laboratory 2025/26</b></h1>
@@ -89,31 +89,38 @@
         <p><a href="#references">References</a></p>
     </div>
 
-    <!-- ===== ABSTRACT ===== -->
+    <!-- ===== ABSTRACT SECTION ===== -->
     <h2 id="abstract">Abstract</h2>
     <div class="box" id="abstract-text">
-        <p> <i>Insert your 150-word abstract here.</i></p>
+        <p>✏️ <i>Insert your 150-word abstract here.</i></p>
     </div>
 
     <!-- ===== MAIN ARTICLE ===== -->
     <h2 id="article">Main Article</h2>
     <div class="box" id="article-text">
-        <p> <i>Paste your full 800–1000 word article here.</i></p>
+        <p>✏️ <i>Paste your full 800–1000 word article here.</i></p>
     </div>
 
     <!-- ===== FIGURES ===== -->
     <h2 id="figures">Figures & Tables</h2>
     <div class="box" id="figures-text">
-        <p> <i>Add figures, tables, or images here.</i></p>
+        <p>✏️ <i>Add figures, tables, or images here.</i></p>
         <img src="yourimage.jpg" alt="Figure Example">
         <p><b>Figure 1:</b> Description of your figure.</p>
     </div>
 
-    <!-- ===== PRESENTATION ===== -->
+    <!-- ===== PRESENTATION (NO SCROLLBARS) ===== -->
     <h2 id="presentation">Digital Presentation</h2>
     <div class="box" id="presentation-text">
-        <p> <i>Embed your presentation here.</i></p>
-        <iframe src="yourfile.pdf" width="100%" height="400px"></iframe>
+        <p>✏️ <i>Embed your presentation here.</i></p>
+
+        <iframe
+            src="yourfile.pdf"
+            width="100%"
+            height="350px"
+            scrolling="no"
+            style="border:none; overflow:hidden;"
+        ></iframe>
     </div>
 
     <!-- ===== REFERENCES ===== -->
@@ -124,10 +131,10 @@
             <br><a href="#">Access article</a>
         </p>
 
-        <p> <i>Add your full reference list here.</i></p>
+        <p>✏️ <i>Add your full reference list here.</i></p>
     </div>
 
-    <!-- ===== WORD COUNT ===== -->
+    <!-- ===== WORD COUNT FOOTER ===== -->
     <div id="wordcount-footer">
         Word count: <span id="wordcount">0</span>
     </div>
