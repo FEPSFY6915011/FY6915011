@@ -7,14 +7,14 @@
     <style>
         body {
             background-color: #121212;
-            color: #BFD8E5;   /* main text = light blue-grey */
+            color: #BFD8E5;   /* main text */
             font-family: Arial, sans-serif;
             margin: 20px;
             line-height: 1.6;
         }
 
         h1, h2, h3 {
-            color: #BFD8E5; /* headings use theme colour */
+            color: #BFD8E5;
         }
 
         .box {
@@ -25,7 +25,7 @@
             margin-bottom: 30px;
         }
 
-        /* WHITE text inside content boxes */
+        /* WHITE text for your editable content sections */
         #abstract-text,
         #article-text,
         #figures-text,
@@ -34,44 +34,60 @@
             color: #ffffff;
         }
 
-        /* links = blue */
         a {
             color: #66aaff;
-            text-decoration: underline;
         }
 
         hr {
             border: 1px solid #BFD8E5;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Word count bottom-right */
-        #wordcount-footer {
+        /* Word count displays */
+        #article-wordcount {
             text-align: right;
             color: #BFD8E5;
             margin-top: 40px;
             font-size: 14px;
         }
+
+        #abstract-wordcount {
+            text-align: right;
+            color: #BFD8E5;
+            font-size: 14px;
+            margin-top: 10px;
+        }
     </style>
 
-    <!-- Word Count -->
+    <!-- WORD COUNT SCRIPTS -->
     <script>
-        function countWords() {
-            let text = document.getElementById("article-text").innerText;
-            let words = text.trim().split(/\s+/).length;
-            document.getElementById("wordcount").innerText = words;
+        // ABSTRACT COUNTER
+        function countWordsAbstract() {
+            let text = document.getElementById("abstract-text").innerText;
+            let words = text.trim().split(/\s+/).filter(Boolean).length;
+            document.getElementById("abstract-count").innerText = words;
         }
-        window.onload = countWords;
+
+        // ARTICLE + FIGURES COUNTER
+        function countWordsArticleFigures() {
+            let article = document.getElementById("article-text").innerText;
+            let figures = document.getElementById("figures-text").innerText;
+
+            let combined = article + " " + figures;
+
+            let words = combined.trim().split(/\s+/).filter(Boolean).length;
+            document.getElementById("article-count").innerText = words;
+        }
+
+        window.onload = function() {
+            countWordsAbstract();
+            countWordsArticleFigures();
+        };
     </script>
 
 </head>
 <body>
 
-    <!-- ===== HEADER / BANNER ===== -->
+    <!-- ===== HEADER ===== -->
     <img src="WebBanner2023.png" alt="Banner">
 
     <h1><b>ENG0018 Computer Laboratory 2025/26</b></h1>
@@ -89,10 +105,14 @@
         <p><a href="#references">References</a></p>
     </div>
 
-    <!-- ===== ABSTRACT SECTION ===== -->
+    <!-- ===== ABSTRACT ===== -->
     <h2 id="abstract">Abstract</h2>
     <div class="box" id="abstract-text">
         <p> <i>Insert your 150-word abstract here.</i></p>
+    </div>
+
+    <div id="abstract-wordcount">
+        Abstract word count: <span id="abstract-count">0</span>
     </div>
 
     <!-- ===== MAIN ARTICLE ===== -->
@@ -106,14 +126,18 @@
     <div class="box" id="figures-text">
         <p> <i>Add figures, tables, or images here.</i></p>
         <img src="yourimage.jpg" alt="Figure Example">
-        <p><b>Figure 1:</b> Description of your figure.</p>
+        <p><b>Figure 1:</b> Caption here.</p>
     </div>
 
-    <!-- ===== PRESENTATION (NO SCROLLBARS) ===== -->
+    <!-- ===== COMBINED WORD COUNT ===== -->
+    <div id="article-wordcount">
+        Main Article + Figures and Table word count: <span id="article-count">0</span>
+    </div>
+
+    <!-- ===== PRESENTATION ===== -->
     <h2 id="presentation">Digital Presentation</h2>
     <div class="box" id="presentation-text">
         <p> <i>Embed your presentation here.</i></p>
-
         <iframe
             src="yourfile.pdf"
             width="100%"
@@ -130,13 +154,7 @@
             Smith, J. (2022). <i>Example Article Title</i>. Example Journal.
             <br><a href="#">Access article</a>
         </p>
-
         <p> <i>Add your full reference list here.</i></p>
-    </div>
-
-    <!-- ===== WORD COUNT FOOTER ===== -->
-    <div id="wordcount-footer">
-        Word count: <span id="wordcount">0</span>
     </div>
 
 </body>
