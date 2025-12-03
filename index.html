@@ -338,7 +338,25 @@
             (Accessed: 3 March 2025).
         </p>
     </div>
+        <p id="lastModified" style="color:#BFD8E5; text-align:right; font-size:14px;"></p>
 
+        <script>
+            // Display the last modified date of the document
+            const modified = new Date(document.lastModified);
+
+            // Format it nicely
+            const formattedDate = modified.toLocaleString('en-GB', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+
+            document.getElementById('lastModified').textContent =
+                "Last Modified: " + formattedDate;
+        </script>
 
 </body>
 </html>
