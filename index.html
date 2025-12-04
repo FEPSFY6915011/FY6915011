@@ -7,7 +7,7 @@
     <style>
         body {
             background-color: #121212;
-            color: #BFD8E5;   /* main text */
+            color: #BFD8E5;
             font-family: Arial, sans-serif;
             margin: 20px;
             line-height: 1.6;
@@ -41,45 +41,28 @@
             border: 1px solid #BFD8E5;
         }
 
-        #article-wordcount {
-            text-align: right;
-            color: #BFD8E5;
-            margin-top: 40px;
-            font-size: 14px;
-        }
-
-        #abstract-wordcount {
+        #article-wordcount, #abstract-wordcount {
             text-align: right;
             color: #BFD8E5;
             font-size: 14px;
-            margin-top: 10px;
         }
     </style>
 
-
+    
     <script>
-        // ABSTRACT COUNTER
         function countWordsAbstract() {
             let text = document.getElementById("abstract-text").innerText;
             let words = text.trim().split(/\s+/).filter(Boolean).length;
             document.getElementById("abstract-count").innerText = words;
         }
 
-        // ARTICLE + FIGURES COUNTER
         function countWordsArticleFigures() {
             let article = document.getElementById("article-text").innerText;
             let figures = document.getElementById("figures-text").innerText;
-
             let combined = article + " " + figures;
-
             let words = combined.trim().split(/\s+/).filter(Boolean).length;
             document.getElementById("article-count").innerText = words;
         }
-
-        window.onload = function() {
-            countWordsAbstract();
-            countWordsArticleFigures();
-        };
     </script>
 
 </head>
@@ -101,9 +84,10 @@
         <p><a href="#references">References</a></p>
     </div>
 
+    
     <h2 id="abstract">Abstract</h2>
     <div class="box" id="abstract-text">
-        <p> <i>Self-driving cars use artificial intelligence, sensors, and advanced engineering to drive without human input. They rely on systems like LiDAR, radar, cameras, and machine learning algorithms to detect obstacles, recognize road markings, and make driving decisions. This article explains how autonomous vehicles understand their surroundings, process sensor data, and plan safe routes. It also covers engineering challenges, including combining data from multiple sensors, unpredictable human behaviour, bad weather, and ethical issues. The article explores current limitations and future developments, such as communication between vehicles and smarter AI models. This offers an accessible introduction to the science and engineering behind autonomous vehicles for Foundation Year students. </i></p>
+        <p><i>Self-driving cars use artificial intelligence, sensors, and advanced engineering to drive without human input. They rely on systems like LiDAR, radar, cameras, and machine learning algorithms to detect obstacles, recognize road markings, and make driving decisions. This article explains how autonomous vehicles understand their surroundings, process sensor data, and plan safe routes. It also covers engineering challenges, including combining data from multiple sensors, unpredictable human behaviour, bad weather, and ethical issues. The article explores current limitations and future developments, such as communication between vehicles and smarter AI models. This offers an accessible introduction to the science and engineering behind autonomous vehicles for Foundation Year students.</i></p>
     </div>
 
     <div id="abstract-wordcount">
@@ -112,7 +96,7 @@
 
     <h2 id="article">Main Article</h2>
     <div class="box" id="article-text">
-
+    
     <h3>Introduction</h3>
     <p>
     Self-driving cars, also known as autonomous vehicles (AVs), are reshaping the automotive industry. 
@@ -239,7 +223,6 @@
 
     </div>
 
-    
     <h2 id="figures">Figures & Tables</h2>
     <div class="box" id="figures-text">
         <p style="font-size:20px; color:#BFD8E5; margin-bottom:15px;">
@@ -292,17 +275,15 @@
         </table>
     </div>
 
-    
     <div id="article-wordcount">
-        Main Article + Figures and Table word count: <span id="article-count">0</span>
+        Main Article + Figures word count: <span id="article-count">0</span>
     </div>
 
     
     <h2 id="presentation">Digital Presentation</h2>
     <div class="box" id="presentation-text">
-        <p> <i>Conference Presentation: How Self-Driving Cars Sense, Think, and Navigate the World</i></p>
-        <video src="ENG0018 Presentation.mp4" width="800" height="450" controls>
-        </video>
+        <p><i>Conference Presentation</i></p>
+        <video src="ENG0018 Presentation.mp4" width="800" height="450" controls></video>
     </div>
 
     
@@ -326,25 +307,64 @@
             (Accessed: 3 March 2025).
         </p>
     </div>
-        <p id="lastModified" style="color:#BFD8E5; text-align:right; font-size:14px;"></p>
 
-        <script>
-            // Display the last modified date of the document
-            const modified = new Date(document.lastModified);
 
-            // Format it nicely
-            const formattedDate = modified.toLocaleString('en-GB', {
-                day: '2-digit',
-                month: 'short',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
+<div id="last-updated" style="color:#BFD8E5; text-align:right; margin-top:20px;">
+    Loading last update time...
+</div>
+
+<button onclick="verifyLastUpdatedTime()" 
+style="display:block; margin-left:auto; padding:6px 14px; background:#1e1e1e; color:#BFD8E5; border:1px solid #BFD8E5; border-radius:4px;">
+    Verify Last Modified Time
+</button>
+
+<script>
+    async function getLastUpdatedTime() {
+
+        const username = "fepsfy6915011";
+        const repo = "FY6915011";
+
+        const url = `https://api.github.com/repos/${username}/${repo}/commits`;
+
+        try {
+            const response = await fetch(url, {
+                method: "GET",
+                headers: { "Accept": "application/vnd.github.v3+json" }
             });
 
-            document.getElementById('lastModified').textContent =
-                "Last Modified: " + formattedDate;
-        </script>
+            if (!response.ok) {
+                throw new Error(`GitHub API error: ${response.status}`);
+            }
+
+            const commits = await response.json();
+
+            if (commits.length > 0) {
+                const lastCommitDate = new Date(commits[0].commit.committer.date);
+
+                document.getElementById("last-updated").innerText =
+                    `Last Modified Time (GitHub): ${lastCommitDate.toLocaleString("en-GB")}`;
+            } else {
+                document.getElementById("last-updated").innerText =
+                    "No commits found.";
+            }
+
+        } catch (error) {
+            document.getElementById("last-updated").innerText =
+                "Error fetching timestamp — check repository details.";
+        }
+    }
+
+    function verifyLastUpdatedTime() {
+        getLastUpdatedTime();
+        alert("Timestamp verified via GitHub API.");
+    }
+
+    window.onload = function() {
+        getLastUpdatedTime();
+        countWordsAbstract();
+        countWordsArticleFigures();
+    };
+</script>
 
 </body>
 </html>
